@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plaza Empresa Colores | Blog de Librería y Materiales Escolares</title>
+<meta name="description" content="Blog educativo sobre librería, cuadernos, marcadores, lápices, colores y materiales escolares. Plaza Empresa Colores.">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fefefe;
+  --dark:#1a1a2e;
+  --mid:#16213e;
+  --accent:#e94560;
+  --accent2:#f5a623;
+  --accent3:#0f3460;
+  --teal:#00b4d8;
+  --text:#222;
+  --muted:#888;
+  --border:#e8e8e8;
+  --surface:#fff;
+  --surface2:#f8f8ff;
+  --purple:#7c3aed;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.8;}
+
+#ck{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--dark);color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:3px solid var(--accent2);}
+#ck p{font-size:13px;flex:1;color:rgba(255,255,255,.75);}
+#ck span{color:var(--accent2);cursor:pointer;text-decoration:underline;}
+.cb{padding:8px 22px;border:none;font-family:'Nunito',sans-serif;font-weight:700;font-size:12px;letter-spacing:.5px;cursor:pointer;border-radius:20px;}
+.cb-y{background:var(--accent2);color:#fff;}
+.cb-n{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.2);}
+
+header{background:var(--dark);position:sticky;top:0;z-index:100;box-shadow:0 3px 20px rgba(26,26,46,.4);}
+.hdr{max-width:1100px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-ico{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:22px;}
+.logo-name{font-family:'Nunito',sans-serif;font-size:18px;font-weight:800;color:#fff;}
+.logo-sub{font-size:10px;color:rgba(245,166,35,.8);letter-spacing:2px;text-transform:uppercase;display:block;}
+nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.6);text-decoration:none;padding:6px 12px;transition:color .2s;}
+nav a:hover{color:var(--accent2);}
+.ntog{display:none;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+
+.hero{background:linear-gradient(135deg,var(--dark) 0%,var(--accent3) 60%,#1a1a4e 100%);color:#fff;padding:80px 20px 70px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 110%,rgba(245,166,35,.12) 0%,transparent 70%);}
+.hero::after{content:'✏️';position:absolute;right:4%;top:8%;font-size:180px;opacity:.06;pointer-events:none;}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:16px;}
+.hero h1{font-family:'Nunito',sans-serif;font-size:52px;font-weight:800;line-height:1.1;margin-bottom:16px;max-width:660px;margin-left:auto;margin-right:auto;}
+.hero h1 span{color:var(--accent2);}
+.hero p{font-size:15px;color:rgba(255,255,255,.6);max-width:520px;margin:0 auto 40px;font-weight:300;}
+.hero-cats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.hcat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;}
+.hero-row{display:flex;justify-content:center;gap:52px;border-top:1px solid rgba(255,255,255,.1);padding-top:30px;}
+.hn{font-family:'Nunito',sans-serif;font-size:36px;font-weight:800;color:var(--accent2);line-height:1;}
+.hl{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;}
+
+.ad-w{max-width:1100px;margin:0 auto;padding:0 20px;}
+.ad{background:var(--surface2);border:1px dashed var(--border);border-radius:8px;text-align:center;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;}
+.ad-top{height:90px;margin:20px 0;}
+.ad-mid{height:90px;margin:28px 0;}
+.ad-sb{height:250px;margin-bottom:20px;}
+
+.main{max-width:1100px;margin:0 auto;padding:36px 20px;display:grid;grid-template-columns:1fr 280px;gap:36px;}
+
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:26px;align-items:center;}
+.filters span{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-right:3px;}
+.fb{padding:6px 16px;border:2px solid var(--border);background:var(--surface);border-radius:20px;cursor:pointer;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;color:var(--muted);transition:all .2s;}
+.fb:hover,.fb.on{border-color:var(--accent);color:var(--accent);background:rgba(233,69,96,.05);}
+
+.feat{background:linear-gradient(135deg,var(--dark),var(--accent3));color:#fff;border-radius:14px;padding:40px 34px;margin-bottom:26px;position:relative;overflow:hidden;}
+.feat::before{content:'⭐ DESTACADO';position:absolute;top:16px;left:16px;font-size:10px;font-weight:700;letter-spacing:2px;color:var(--accent2);}
+.feat::after{content:'📚';position:absolute;right:24px;bottom:20px;font-size:80px;opacity:.1;}
+.feat-cat{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;}
+.feat h2{font-family:'Nunito',sans-serif;font-size:26px;font-weight:800;margin-bottom:12px;line-height:1.2;}
+.feat p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.75;font-weight:300;}
+.feat-meta{display:flex;gap:14px;margin-top:14px;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px;}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:26px;}
+.card{background:var(--surface);border:2px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;}
+.card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 8px 24px rgba(233,69,96,.1);}
+.ct{background:linear-gradient(135deg,var(--dark),var(--accent3));padding:18px 16px 14px;color:#fff;}
+.ct .em{font-size:26px;margin-bottom:7px;}
+.ct .cat{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:4px;}
+.ct h3{font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;line-height:1.3;}
+.cb2{padding:14px 16px;}
+.cb2 p{font-size:13px;color:var(--muted);line-height:1.65;}
+.cf{padding:8px 16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-weight:700;}
+.pill{background:var(--surface2);padding:3px 10px;border-radius:10px;}
+
+.post{background:var(--surface);border:2px solid var(--border);border-radius:12px;padding:28px 30px;margin-bottom:18px;transition:border-color .2s,box-shadow .2s;}
+.post:hover{border-color:var(--accent2);box-shadow:0 4px 16px rgba(245,166,35,.08);}
+.ptag{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border:2px solid var(--border);padding:4px 14px;border-radius:20px;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;}
+.post h2{font-family:'Nunito',sans-serif;font-size:22px;font-weight:800;color:var(--dark);margin-bottom:12px;line-height:1.25;}
+.post p{font-size:14.5px;line-height:1.85;color:var(--text);margin-bottom:12px;}
+.post p:last-child{margin-bottom:0;}
+.note{background:linear-gradient(135deg,#fff8e7,#fff3d4);border-left:3px solid var(--accent2);padding:14px 18px;border-radius:0 10px 10px 0;margin:14px 0;font-size:13px;color:var(--accent3);line-height:1.75;font-weight:600;}
+
+.sbox{background:var(--surface);border:2px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:16px;}
+.sh{background:var(--dark);padding:12px 16px;font-size:11px;font-weight:700;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;}
+.sb{padding:16px;}
+.sb p{font-size:13px;color:var(--muted);line-height:1.65;}
+.sb p+p{margin-top:8px;}
+.sb strong{color:var(--text);}
+.slist{list-style:none;}
+.slist li{padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:7px;font-size:13px;color:var(--text);line-height:1.4;}
+.slist li:last-child{border-bottom:none;}
+.slist li .i{color:var(--accent);flex-shrink:0;}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.sstat{background:var(--surface2);border-radius:10px;padding:12px;text-align:center;border:2px solid var(--border);}
+.sstat .n{font-family:'Nunito',sans-serif;font-size:24px;font-weight:800;color:var(--accent);}
+.sstat .l{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;}
+
+footer{background:var(--dark);color:rgba(255,255,255,.45);border-top:3px solid var(--accent2);padding:48px 20px 22px;}
+.fg{max-width:1100px;margin:0 auto 36px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;}
+.fb2 p{font-size:13px;line-height:1.8;margin-top:12px;}
+.fc h5{font-size:11px;font-weight:700;color:var(--accent2);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(245,166,35,.2);}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:8px;font-size:13px;}
+.fc ul li span{color:rgba(255,255,255,.4);cursor:pointer;transition:color .2s;}
+.fc ul li span:hover{color:var(--accent2);}
+.fbot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;}
+.flinks{display:flex;gap:18px;}
+.flinks span{color:rgba(255,255,255,.3);cursor:pointer;transition:color .2s;}
+.flinks span:hover{color:var(--accent2);}
+
+.ov{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;}
+.ov.show{display:flex;}
+.modal{background:var(--surface);border-radius:14px;max-width:620px;width:100%;max-height:80vh;overflow-y:auto;border-top:3px solid var(--accent2);}
+.mh{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--surface);}
+.mh h3{font-family:'Nunito',sans-serif;font-size:19px;font-weight:800;color:var(--dark);}
+.mc{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);}
+.mb{padding:22px 24px;font-size:13px;line-height:1.8;color:var(--text);}
+.mb h4{font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--accent);margin:16px 0 6px;}
+.mb p{margin-bottom:8px;color:var(--muted);}
+
+@media(max-width:880px){
+  .main{grid-template-columns:1fr;}
+  .grid{grid-template-columns:1fr;}
+  .fg{grid-template-columns:1fr;}
+  nav{display:none;}
+  .ntog{display:block;}
+  nav.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--dark);padding:10px 20px;z-index:99;}
+  .hero h1{font-size:36px;}
+}
+</style>
+</head>
+<body>
+
+<div id="ck">
+  <p>Usamos cookies técnicas y analíticas. Al continuar aceptas nuestra <span onclick="openM('privacidad')">Política de Privacidad</span> y <span onclick="openM('cookies')">Política de Cookies</span> (RGPD).</p>
+  <div style="display:flex;gap:8px;">
+    <button class="cb cb-y" onclick="document.getElementById('ck').style.display='none'">Aceptar</button>
+    <button class="cb cb-n" onclick="document.getElementById('ck').style.display='none'">Solo necesarias</button>
+  </div>
+</div>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-ico">🎨</div>
+      <div>
+        <span class="logo-name">Plaza Empresa Colores</span>
+        <span class="logo-sub">Librería · Colores · Materiales</span>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#articulos">Artículos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="ntog" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-tag">🎨 Blog educativo de librería · Plaza Colores</div>
+  <h1>Todo sobre <span>Librería</span> y Materiales</h1>
+  <p>Guías educativas sobre cuadernos, marcadores, lápices, colores, papelería y todo lo que necesitas para estudiar, crear y organizar.</p>
+  <div class="hero-cats">
+    <span class="hcat">✏️ Lápices</span>
+    <span class="hcat">🖊️ Bolígrafos</span>
+    <span class="hcat">📒 Cuadernos</span>
+    <span class="hcat">🖍️ Marcadores</span>
+    <span class="hcat">🎨 Colores</span>
+    <span class="hcat">📐 Materiales</span>
+  </div>
+  <div class="hero-row">
+    <div><div class="hn">17+</div><div class="hl">Artículos</div></div>
+    <div><div class="hn">8</div><div class="hl">Categorías</div></div>
+    <div><div class="hn">35K+</div><div class="hl">Lectores</div></div>
+    <div><div class="hn">100%</div><div class="hl">Gratuito</div></div>
+  </div>
+</section>
+
+<!-- HUECO ANUNCIO ADSENSE -->
+<div class="ad-w"><div class="ad ad-top">Espacio publicitario — 728×90</div></div>
+
+<div class="main">
+  <main>
+    <div class="filters">
+      <span>Filtrar:</span>
+      <button class="fb on" onclick="fil('all',this)">Todos</button>
+      <button class="fb" onclick="fil('lapices',this)">Lápices</button>
+      <button class="fb" onclick="fil('cuadernos',this)">Cuadernos</button>
+      <button class="fb" onclick="fil('marcadores',this)">Marcadores</button>
+      <button class="fb" onclick="fil('colores',this)">Colores</button>
+      <button class="fb" onclick="fil('organizacion',this)">Organización</button>
+    </div>
+
+    <div class="feat" data-cat="lapices">
+      <div class="feat-cat">Guía Esencial</div>
+      <h2>Tipos de lápices: dureza, grafito y para qué sirve cada uno</h2>
+      <p>La escala de dureza H-B-F determina la oscuridad y dureza de la mina. Entender qué significa cada número y letra te permite elegir el lápiz correcto para escribir, dibujar o hacer bocetos con precisión.</p>
+      <div class="feat-meta"><span>Jun 2025</span><span>·</span><span>10 min</span><span>·</span><span>19K lecturas</span></div>
+    </div>
+
+    <div class="grid" id="articulos">
+      <div class="card" data-cat="cuadernos">
+        <div class="ct"><div class="em">📒</div><div class="cat">Cuadernos</div><h3>Tipos de cuadernos: cuadrícula, líneas, punteado y liso</h3></div>
+        <div class="cb2"><p>Cada tipo de papel tiene un uso óptimo: las líneas para escritura, la cuadrícula para matemáticas, el punteado para bullet journals y lettering.</p></div>
+        <div class="cf"><span>Cuadernos</span><span class="pill">8 min</span></div>
+      </div>
+      <div class="card" data-cat="marcadores">
+        <div class="ct"><div class="em">🖊️</div><div class="cat">Marcadores</div><h3>Marcadores permanentes vs no permanentes: diferencias</h3></div>
+        <div class="cb2"><p>La diferencia no es solo que uno se borra. Los solventes, tipos de punta y compatibilidad con superficies varían completamente entre ambos.</p></div>
+        <div class="cf"><span>Marcadores</span><span class="pill">8 min</span></div>
+      </div>
+      <div class="card" data-cat="colores">
+        <div class="ct"><div class="em">🎨</div><div class="cat">Colores</div><h3>Lápices de colores: cera, aceite y acuarelables</h3></div>
+        <div class="cb2"><p>Los lápices de color tienen composiciones completamente diferentes que determinan cómo mezclan, cómo cubren y qué efectos puedes lograr con ellos.</p></div>
+        <div class="cf"><span>Colores</span><span class="pill">9 min</span></div>
+      </div>
+      <div class="card" data-cat="organizacion">
+        <div class="ct"><div class="em">📐</div><div class="cat">Organización</div><h3>Técnicas de estudio con materiales de librería</h3></div>
+        <div class="cb2"><p>El método Cornell, los mapas mentales y el sistema de resaltado por colores son técnicas de estudio que optimizan el uso de tus materiales.</p></div>
+        <div class="cf"><span>Organización</span><span class="pill">10 min</span></div>
+      </div>
+    </div>
+
+    <!-- HUECO ANUNCIO ADSENSE -->
+    <div class="ad ad-mid">Espacio publicitario — 728×90</div>
+
+    <div class="post" data-cat="lapices">
+      <div class="ptag">✏️ Lápices · 10 min</div>
+      <h2>La escala de dureza de los lápices: de 9H a 9B explicada</h2>
+      <p>La escala de dureza de los lápices es un sistema estandarizado que indica la proporción de grafito y arcilla en la mina. <strong>Plaza Empresa Colores</strong>, blog educativo de librería, explica el sistema: la letra H (Hard, duro) indica mayor proporción de arcilla y menor de grafito, produciendo líneas más claras y finas que no mancha los dedos. La letra B (Black, negro) indica mayor proporción de grafito y menor de arcilla, produciendo líneas más oscuras, suaves y más susceptibles al manchado.</p>
+      <p>La letra F (Fine point) es un intermedio entre H y HB, y el HB es el punto central de la escala, equivalente al número 2 americano, el estándar para escritura general y exámenes. Los lápices 2H-4H son ideales para dibujo técnico, esquemas y líneas guía que luego se borran. Los 2B-6B son los preferidos para sombreado artístico, dibujo de retrato y técnicas de difuminado.</p>
+      <div class="note">💡 Plaza Empresa Colores: para el estudio diario el HB o B ofrece el mejor equilibrio entre legibilidad y suavidad de escritura. Para tomar apuntes rápidos un B es preferible porque desliza más suavemente sobre el papel, reduciendo la fatiga de la mano en sesiones largas.</div>
+    </div>
+
+    <div class="post" data-cat="cuadernos">
+      <div class="ptag">📒 Cuadernos · 9 min</div>
+      <h2>Gramaje del papel: qué significa y por qué importa</h2>
+      <p>El gramaje del papel, medido en gramos por metro cuadrado (g/m²), es uno de los indicadores más importantes de la calidad de un cuaderno. <strong>Plaza Empresa Colores</strong>, empresa educativa de papelería, explica la escala: el papel de 60-70 g/m² es el más económico y común en cuadernos básicos; es ligero pero transparente, y la tinta de bolígrafo o marcadores puede traspasar fácilmente al otro lado de la hoja (efecto ghosting o bleeding).</p>
+      <p>El papel de 80-90 g/m² es el estándar de calidad media: adecuado para bolígrafos de tinta y lápices sin problemas. El papel de 100-120 g/m² es el preferido para bullet journals y cuadernos de estudio con uso intensivo de marcadores y resaltadores, ya que aguanta mejor la tinta sin traspasar. Los cuadernos de acuarela y dibujo artístico usan papeles de 200-300 g/m² o más, tratados para absorber agua sin deformarse.</p>
+    </div>
+
+    <div class="post" data-cat="marcadores">
+      <div class="ptag">🖊️ Marcadores · 9 min</div>
+      <h2>Resaltadores: pigmento vs tinta y cómo no dañar el papel</h2>
+      <p>Los resaltadores son una herramienta fundamental en el estudio, pero no todos funcionan igual sobre todos los papeles. <strong>Plaza Empresa Colores</strong> explica los dos tipos principales: los resaltadores de tinta fluorescente convencional contienen colorantes solubles en agua que pueden difuminarse si se moja el papel o interactuar con ciertos bolígrafos de tinta gel, haciendo que la escritura sangre. Los de tinta seca o cera no tienen este problema y son compatibles con una mayor variedad de papeles.</p>
+      <p>Para proteger las impresiones de impresora laser al resaltar, es fundamental esperar al menos 24 horas después de imprimir antes de aplicar el resaltador, ya que el tóner recién fijado puede desprenderse con el solvente del resaltador. Los resaltadores de doble punta (punta biselada gruesa + punta fina) son los más versátiles para combinar subrayado de bloques con anotaciones al margen.</p>
+    </div>
+
+    <div class="post" data-cat="colores">
+      <div class="ptag">🎨 Colores · 9 min</div>
+      <h2>Teoría del color aplicada a materiales escolares</h2>
+      <p>Entender la teoría básica del color mejora enormemente cómo usas tus materiales de dibujo y organización. <strong>Plaza Empresa Colores</strong>, empresa educativa de materiales artísticos, explica el modelo de color pigmento (CMYK): los tres colores primarios en pigmento son el cian (azul-verde), el magenta (rojo-rosado) y el amarillo. Al mezclarlos en diferentes proporciones se obtienen los secundarios: rojo (magenta + amarillo), verde (cian + amarillo) y azul-violeta (cian + magenta).</p>
+      <p>La rueda de color es una herramienta práctica para entender qué colores combinan bien: los complementarios (opuestos en la rueda) crean contraste máximo; los análogos (adyacentes) crean armonía. Para organizar apuntes por colores de forma efectiva, los colores cálidos (rojo, naranja, amarillo) atraen más la atención y son ideales para conceptos clave, mientras los fríos (azul, verde) son más relajantes y mejores para información de contexto o secundaria.</p>
+    </div>
+
+    <div class="post" data-cat="lapices">
+      <div class="ptag">✒️ Bolígrafos · 9 min</div>
+      <h2>Tipos de bolígrafos: ballpoint, rollerball, gel y fineliner</h2>
+      <p>No todos los bolígrafos funcionan igual y cada tipo tiene ventajas específicas para diferentes usos. <strong>Plaza Empresa Colores</strong> explica las diferencias: el bolígrafo de aceite (ballpoint) usa tinta espesa de base oleosa que se seca al instante y no mancha al frotar; es el más duradero y económico pero requiere más presión al escribir. El rollerball usa tinta líquida de base agua que fluye mucho más suavemente pero tarda más en secar y puede traspasar en papeles de bajo gramaje.</p>
+      <p>Los bolígrafos de gel combinan la suavidad del rollerball con mejor resistencia al traspasado, siendo los preferidos para escritura prolongada por la poca presión que requieren. El fineliner tiene una punta de fibra o metal calibrada que produce líneas precisas de grosor constante; es el estándar para dibujo técnico, lettering y decoración de cuadernos.</p>
+      <div class="note">💡 Para zurdos, los bolígrafos de secado rápido (ballpoint o gel de secado rápido) evitan el manchado en la palma. La mayoría de rollerball y gel convencionales tardan 1-2 segundos en secar, tiempo suficiente para que un zurdo arrastre la tinta al mover la mano.</div>
+    </div>
+
+    <div class="post" data-cat="organizacion">
+      <div class="ptag">📐 Organización · 10 min</div>
+      <h2>Bullet journal: materiales que necesitas realmente</h2>
+      <p>El bullet journal es un sistema de organización personal que combina agenda, diario y cuaderno de notas en un solo cuaderno. <strong>Plaza Empresa Colores</strong>, empresa de papelería educativa, desmitifica los materiales necesarios: el cuaderno punteado (dotted) es el más popular porque la cuadrícula de puntos guía sin dominar visualmente el resultado final. Los más usados son los de 200+ páginas con papel de 90-120 g/m² para aguantar marcadores.</p>
+      <p>El conjunto mínimo efectivo consiste en un bolígrafo negro de punta fina (0.3-0.5 mm) para texto, una regla y 3-5 colores para categorizar. Los kits de iniciación con decenas de rotuladores, washi tapes y stickers son opcionales y pueden añadirse progresivamente según el uso que le des al sistema. El error más común es invertir en materiales antes de establecer un hábito consistente de uso.</p>
+    </div>
+
+    <div class="post" data-cat="marcadores">
+      <div class="ptag">🖍️ Rotuladores · 8 min</div>
+      <h2>Rotuladores de punta de pincel: técnica y tipos de punta</h2>
+      <p>Los rotuladores de punta de pincel (brush pen) son herramientas versátiles que combinan la comodidad de un rotulador con la expresividad de un pincel. <strong>Plaza Empresa Colores</strong> explica los tipos de punta: la punta de fibra flexible produce líneas de grosor variable según la presión aplicada, siendo más fácil de controlar para principiantes. La punta de pelo natural (similar a un pincel real) ofrece mayor rango de variación y expresividad pero requiere más práctica para dominar.</p>
+      <p>Para lettering y caligrafía moderna, la técnica base consiste en aplicar presión en los trazos descendentes (gruesos) y levantar casi completamente la presión en los ascendentes (finos). Este contraste de grosor es la característica visual del lettering de pincel. La práctica en papel de práctica de caligrafía con guías de ángulo facilita enormemente el aprendizaje inicial.</p>
+    </div>
+
+    <div class="post" data-cat="colores">
+      <div class="ptag">🖍️ Ceras · 8 min</div>
+      <h2>Ceras de colores: composición y técnicas de mezcla</h2>
+      <p>Las ceras de colores son uno de los materiales de coloración más versátiles y accesibles. <strong>Plaza Empresa Colores</strong> explica su composición: las ceras escolares básicas contienen pigmento, cera de parafina y arcilla; son económicas, resistentes y aptas para las técnicas básicas de coloración plana. Las ceras artísticas de calidad superior usan pigmentos más concentrados y mayor proporción de cera de carnauba, que permite un acabado más suave y una mezcla de colores más fluida mediante presión.</p>
+      <p>La técnica del sgraffiato (rayado) consiste en aplicar una capa gruesa de color oscuro sobre capas previas de colores claros y rayar el negro con un objeto puntiagudo para revelar los colores subyacentes, creando efectos de textura únicos. El encáustico (mezcla con calor) aplica calor suave con una herramienta para fundir y mezclar las ceras directamente sobre el papel, creando efectos de difuminado imposibles con técnicas en frío.</p>
+    </div>
+
+    <div class="post" data-cat="cuadernos">
+      <div class="ptag">📚 Encuadernación · 8 min</div>
+      <h2>Tipos de encuadernación de cuadernos: espiral, cosido y encolado</h2>
+      <p>La encuadernación de un cuaderno determina su durabilidad, cómo se abre y cuánto espacio de escritura ofrece cerca del margen. <strong>Plaza Empresa Colores</strong>, empresa de papelería educativa, explica los tipos principales: la encuadernación en espiral (wire-o o espiral plástica) permite que el cuaderno se doble completamente sobre sí mismo, siendo ideal para quien escribe con el cuaderno en mano o en espacios reducidos. Su desventaja es que las hojas pueden rasgarse en la perforación con el uso intensivo.</p>
+      <p>La encuadernación cosida (sewn binding) es la más duradera: las hojas se cosen en cuadernillos y se pegan al lomo, permitiendo que el cuaderno se abra completamente plano sin dañarse. Es el estándar en cuadernos de calidad para artistas y bullet journalers. La encuadernación encolada (perfect binding) es la más económica pero la menos duradera: las hojas se pegan con cola al lomo y con el tiempo pueden desprenderse con el uso intensivo.</p>
+    </div>
+
+    <div class="post" data-cat="organizacion">
+      <div class="ptag">🗂️ Estudio · 9 min</div>
+      <h2>Sistema de colores para apuntes: cómo organizar con eficacia</h2>
+      <p>Un sistema de colores bien definido puede mejorar significativamente la eficacia del estudio y la retención de información. <strong>Plaza Empresa Colores</strong>, empresa de materiales de estudio educativa, propone un sistema de 4 colores como punto de partida: amarillo para definiciones y conceptos clave, verde para ejemplos y datos que lo ilustran, azul para información de contexto y relaciones entre conceptos, y rojo o naranja para fórmulas, fechas y datos que requieren memorización exacta.</p>
+      <p>La consistencia es más importante que el sistema específico: el cerebro asocia el color con el tipo de información solo si el uso es constante y predecible. Cambiar el significado de los colores entre asignaturas anula la ventaja del sistema. Los estudios de psicología cognitiva muestran que el subrayado excesivo (más del 20% del texto) pierde su eficacia diferenciadora: si todo está subrayado, nada destaca.</p>
+    </div>
+
+  </main>
+
+  <aside>
+    <!-- HUECO ANUNCIO ADSENSE -->
+    <div class="ad ad-sb">Espacio publicitario 300×250</div>
+
+    <div class="sbox" id="nosotros">
+      <div class="sh">Sobre Nosotros</div>
+      <div class="sb">
+        <p><strong>Plaza Empresa Colores</strong> es un blog educativo sobre librería, materiales escolares, papelería y técnicas de estudio y creación.</p>
+        <p>Publicamos guías accesibles para estudiantes, artistas y amantes de la papelería. Contenido 100% educativo sin afiliados ni recomendaciones comerciales.</p>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sh">Estadísticas</div>
+      <div class="sb">
+        <div class="sgrid">
+          <div class="sstat"><div class="n">17+</div><div class="l">Artículos</div></div>
+          <div class="sstat"><div class="n">35K</div><div class="l">Lectores</div></div>
+          <div class="sstat"><div class="n">8</div><div class="l">Categorías</div></div>
+          <div class="sstat"><div class="n">4.9★</div><div class="l">Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sh">Más Leídos</div>
+      <div class="sb">
+        <ul class="slist">
+          <li><span class="i">✏️</span>Escala de dureza de lápices</li>
+          <li><span class="i">📒</span>Gramaje del papel explicado</li>
+          <li><span class="i">🎨</span>Teoría del color para estudiar</li>
+          <li><span class="i">🖊️</span>Resaltadores: cuál usar y cuándo</li>
+          <li><span class="i">📐</span>Bullet journal: lo que realmente necesitas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sh">Categorías</div>
+      <div class="sb">
+        <ul class="slist">
+          <li><span class="i">✏️</span>Lápices y bolígrafos</li>
+          <li><span class="i">📒</span>Cuadernos y papel</li>
+          <li><span class="i">🖊️</span>Marcadores y resaltadores</li>
+          <li><span class="i">🎨</span>Colores y ceras</li>
+          <li><span class="i">📐</span>Organización y estudio</li>
+          <li><span class="i">🖍️</span>Rotuladores y lettering</li>
+          <li><span class="i">🗂️</span>Técnicas de estudio</li>
+          <li><span class="i">📚</span>Materiales artísticos</li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer id="contacto">
+  <div class="fg">
+    <div class="fb2">
+      <div class="logo"><div class="logo-ico">🎨</div><div><span class="logo-name">Plaza Empresa Colores</span><span class="logo-sub">Blog Educativo · Librería & Materiales</span></div></div>
+      <p>Blog educativo independiente sobre librería, papelería y materiales escolares. Sin afiliados ni recomendaciones comerciales.<br><br>
+      Contacto: <strong style="color:rgba(255,255,255,.6)">plazaempresacolores@gmail.com</strong><br><br>
+      © 2025 Plaza Empresa Colores. Todos los derechos reservados.</p>
+    </div>
+    <div class="fc">
+      <h5>Secciones</h5>
+      <ul>
+        <li><span onclick="scrollTo(0,0)">Inicio</span></li>
+        <li><span onclick="document.getElementById('articulos').scrollIntoView({behavior:'smooth'})">Artículos</span></li>
+        <li><span onclick="document.getElementById('nosotros').scrollIntoView({behavior:'smooth'})">Nosotros</span></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h5>Legal</h5>
+      <ul>
+        <li><span onclick="openM('privacidad')">Política de Privacidad</span></li>
+        <li><span onclick="openM('terminos')">Términos de Uso</span></li>
+        <li><span onclick="openM('cookies')">Política de Cookies</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 Plaza Empresa Colores — Blog Educativo de Librería y Materiales</span>
+    <div class="flinks">
+      <span onclick="openM('privacidad')">Privacidad</span>
+      <span onclick="openM('terminos')">Términos</span>
+      <span onclick="openM('cookies')">Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<div class="ov" id="m-privacidad"><div class="modal">
+  <div class="mh"><h3>Política de Privacidad</h3><button class="mc" onclick="closeM('privacidad')">✕</button></div>
+  <div class="mb">
+    <p>Última actualización: Junio 2025</p>
+    <h4>Responsable</h4><p>Plaza Empresa Colores · plazaempresacolores@gmail.com</p>
+    <h4>Datos que recopilamos</h4><p>Únicamente datos de navegación anónimos mediante cookies técnicas y analíticas. No recopilamos datos personales sin consentimiento.</p>
+    <h4>Finalidad</h4><p>Mejorar la navegación, analizar métricas anónimas y mostrar publicidad contextual mediante Google AdSense.</p>
+    <h4>Base legal</h4><p>Consentimiento explícito (Art. 6.1.a RGPD) e interés legítimo (Art. 6.1.f RGPD).</p>
+    <h4>Tus derechos</h4><p>Acceso, rectificación, supresión y portabilidad. Escribe a plazaempresacolores@gmail.com. Puedes reclamar ante la AEPD.</p>
+    <h4>Transferencias</h4><p>Google AdSense puede transferir datos a EE.UU. bajo el marco EU-US Data Privacy Framework.</p>
+  </div>
+</div></div>
+
+<div class="ov" id="m-terminos"><div class="modal">
+  <div class="mh"><h3>Términos de Uso</h3><button class="mc" onclick="closeM('terminos')">✕</button></div>
+  <div class="mb">
+    <p>Última actualización: Junio 2025</p>
+    <h4>Contenido</h4><p>Blog exclusivamente educativo e informativo sobre librería y materiales escolares. No constituye asesoramiento de compra.</p>
+    <h4>Propiedad intelectual</h4><p>Todos los textos y diseños son propiedad de Plaza Empresa Colores. Prohibida su reproducción sin autorización.</p>
+    <h4>Responsabilidad</h4><p>No nos responsabilizamos de decisiones de compra basadas en el contenido publicado.</p>
+    <h4>Publicidad</h4><p>Publicidad gestionada por Google AdSense. No implica recomendación ni afiliación.</p>
+    <h4>Contacto</h4><p>plazaempresacolores@gmail.com</p>
+  </div>
+</div></div>
+
+<div class="ov" id="m-cookies"><div class="modal">
+  <div class="mh"><h3>Política de Cookies</h3><button class="mc" onclick="closeM('cookies')">✕</button></div>
+  <div class="mb">
+    <h4>Técnicas</h4><p>Necesarias para el funcionamiento. No requieren consentimiento. Duración: sesión.</p>
+    <h4>Analíticas</h4><p>Información anónima de uso. Requieren consentimiento. Duración: 26 meses.</p>
+    <h4>Publicitarias (Google AdSense)</h4><p>Gestionadas por Google LLC. Requieren consentimiento. Duración: hasta 2 años.</p>
+    <h4>Gestión</h4><p>Retira el consentimiento desde tu navegador. Consultas: plazaempresacolores@gmail.com</p>
+  </div>
+</div></div>
+
+<script>
+function fil(cat,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('[data-cat]').forEach(el=>{
+    el.style.display=(cat==='all'||el.dataset.cat===cat)?'':'none';
+  });
+}
+function openM(id){document.getElementById('m-'+id).classList.add('show');document.body.style.overflow='hidden';}
+function closeM(id){document.getElementById('m-'+id).classList.remove('show');document.body.style.overflow='';}
+document.querySelectorAll('.ov').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('show');document.body.style.overflow=''}}));
+</script>
+</body>
+</html>
